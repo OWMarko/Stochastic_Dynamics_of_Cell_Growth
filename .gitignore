@@ -39,3 +39,16 @@
 
 # debug information files
 *.dwo
+
+
+__pycache__/
+*.pyc
+venv/
+
+data/*.csv
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.fls
+paper/*.fdb_latexmk
