@@ -1,6 +1,10 @@
-#include <iostream>
+#include <string>
 #include <vector>
-#include "simulation.hpp"
+#include "models/yule_process.hpp"
+#include "models/inference.hpp"
+#include "models/cell_mass.hpp"
+#include "utils.hpp"
+
 
 int main(int argc, char* argv[]) {
     std::cout << "--- Stochastic Cell Growth Simulation ---\n";
