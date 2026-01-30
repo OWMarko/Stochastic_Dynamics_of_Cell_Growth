@@ -31,7 +31,7 @@ I focused on the three "heavy" models of the project.
 
 We observe a sequence of cell lifetimes and try to estimate the division rate  using a Maximum Likelihood Estimator.
 
-* **The Goal :** Verify that with enough samples (), our error follows the Central Limit Theorem
+* **The Goal :** Verify that with enough samples, our error follows the Central Limit Theorem
 * **The Tech :** It's a massive array summation problem, perfect for parallel reduction
 
 ![Statistical Inference](img/graph_inference.png)
@@ -39,10 +39,10 @@ We observe a sequence of cell lifetimes and try to estimate the division rate  u
 
 ### 2. Cell Mass Dynamics (The "Memory Loss")
 
-We simulate two cells : one starts microscopic (), the other starts massive (). We track their lineage to see if they "forget" their initial size.
+We simulate two cells : one starts microscopic, the other starts massive. We track their lineage to see if they "forget" their initial size.
 
 * **The Finding :** They do. The trajectories converge exponentially fast to the same distribution
-* **The Trap :** I found a sampling bias. If you look at a population at time , cells are on average 2x bigger than if you just look at them "at birth" ()
+* **The Trap :** I found a sampling bias. If you look at a population at time , cells are on average 2x bigger than if you just look at them "at birth" 
 
 ![Cell Mass Dynamics](img/graph_cell_mass.png)
 
@@ -51,7 +51,7 @@ We simulate two cells : one starts microscopic (), the other starts massive (). 
 This is the big one. A full colony simulation where every cell can divide.
 
 * **The Method :** I couldn't just simulate cells one by one (memory overload). I used the **Gillespie Algorithm** to jump from one event to the next
-* **The Result :** The population grows exponentially (), but purely by chance, the size at time  follows a Geometric distribution
+* **The Result :** The population grows exponentially, but purely by chance, the size at time  follows a Geometric distribution
 ![Yule Graph](img/graph_yule_explosion.png)
 
 ## Under the Hood
