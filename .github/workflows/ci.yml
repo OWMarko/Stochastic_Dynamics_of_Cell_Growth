@@ -1,0 +1,28 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Build Docker Image
+      run: docker build -t cell-sim-test .
+
+    - name: Run C++ Unit Tests
+      run: docker run --rm cell-sim-test ./build/run_tests
+
+    - name: Run Python Integration Test
+      run: |
+        docker run --rm cell-sim-test /bin/bash -c "
+          ./build/cell_sim 2.0 1.0 test_output.csv && 
+          python3 scripts/test_integration.py test_output.csv
+        "
