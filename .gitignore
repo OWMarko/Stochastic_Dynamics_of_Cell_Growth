@@ -1,0 +1,22 @@
+# C++ Build artifacts
+build/
+bin/
+*.o
+*.exe
+*.out
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.env
+venv/
+
+# Data output
+data/*.csv
+data/*.png
+!data/.gitkeep
+
+*.a     
+*.dll   

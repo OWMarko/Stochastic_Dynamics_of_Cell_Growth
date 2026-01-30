@@ -1,17 +1,23 @@
-FROM python:3.10-slim
+FROM python:3.9-slim-bullseye
+
+LABEL maintainer="OWMarko"
+LABEL description="Stochastic Cell Growth Engine (C++ & Python)"
 
 RUN apt-get update && apt-get install -y \
     build-essential \
     cmake \
-    git \
+    libomp-dev \
     && rm -rf /var/lib/apt/lists/*
+
+
+RUN pip install --no-cache-dir pandas matplotlib numpy
 
 WORKDIR /app
 
 COPY . .
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN mkdir -p build && cd build && \
+    cmake .. && \
+    make
 
-RUN mkdir build && cd build && cmake .. && make
-
-CMD ["./build/cell_sim"]
+CMD ["/bin/bash", "-c", "./build/cell_sim && python scripts/plot_mass.py && python scripts/plot_yule.py && python scripts/plot_inference.py"]

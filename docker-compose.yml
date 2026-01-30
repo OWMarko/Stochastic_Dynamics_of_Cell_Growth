@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  cell-engine:
+    build: .
+    image: cell-growth-sim
+    container_name: cell_simulation
+    volumes:
+      - ./data:/app/data
+    tty: true

@@ -1,0 +1,10 @@
+build/
+bin/
+.vscode/
+venv/
+__pycache__/
+.git/
+*.exe
+*.o
+data/*.csv
+data/*.png
