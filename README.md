@@ -16,8 +16,8 @@ Here are the results on my 8-thread machine:
 
 | Model | Load | Serial Time | OpenMP Time | Speedup |
 | --- | --- | --- | --- | --- |
-| **Inference** () | 50M samples | 3.40s | **1.13s** | **x2.98** |
-| **Cell Mass** () | 50M cells | 6.23s | **0.96s** | **x6.44** |
+| **Inference**  | 50M samples | 3.40s | **1.13s** | **x2.98** |
+| **Cell Mass** | 50M cells | 6.23s | **0.96s** | **x6.44** |
 | **Yule Process** | 100k colonies | 102.15s | **15.45s** | **x6.61** |
 
 Going from **1m 40s** to **15s** on the Yule process changed everything for my testing workflow.
