@@ -2,11 +2,11 @@
 
 ## The Story & Academic Integrity
 
-Basically, this project started as a standard assignment for my **"Monte Carlo Methods & Markov Chains"** course (First Year of Applied Math Master). The job was to run numerical experiments to validate some probability theorems regarding cell division (CLT, Memory Loss, etc.).
+Basically this project started as a standard assignment for my **"Monte Carlo Methods & Markov Chains"** course (First Year of Applied Math Master). The job was to run numerical experiments to validate some probability theorems regarding cell division (CLT, Memory Loss, etc.).
 
-I did the math, wrote the proofs, and generated the first plots in Python. You can find that "serious" academic part (Report & Slides) in the `docs/` folder, the code will not be published (maybe one day if I rewrite it in C++ or Julia, I'll see).
+I did the math, wrote the proofs, and generated the first plots in Python. You can find that serious academic part (Report & Slides) in the `docs/` folder, the code will not be published (maybe one day if I rewrite it in C++ or Julia, I'll see).
 
-**But then I got curious.** Python is great, but simulating millions of cells was taking several minutes. I wanted to use this playground to improve my skills in **C++ and HPC**. So, I decided to re-engineer the core models from scratch, moving from a script-based approach to a proper compiled engine using **OpenMP** to burn all available CPU cores.
+Python is great, but simulating millions of cells was taking several minutes. I wanted to use this playground to improve my skills in **C++ and HPC**. So, I decided to re-engineer the core models from scratch, moving from a script-based approach to a proper compiled engine using **OpenMP** to burn all available CPU cores.
 
 ## The Benchmark
 
